@@ -1,7 +1,9 @@
 <h1>new HAMS, or something</h1>
 
 <%= form_for(@article) do |f| %>
-  <%= f.text_field :title %>
-  <%= f.text_area :body %>
+  <%= f.label "Title" %>
+  <div><%= f.text_field :title %></div>
+  <%= f.label "Body" %>
+  <div><%= f.text_area :body %></div>
   <%= f.submit %>
 <% end %>
