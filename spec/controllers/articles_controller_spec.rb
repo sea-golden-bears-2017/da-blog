@@ -33,7 +33,10 @@ describe ArticlesController, type: :controller do
         expect(response.status).to eq(200)
       end
 
-      it 'renders a form'
+      it 'renders the edit view' do
+        expect(response).to render_template(:edit)
+      end
+
       it 'assigns the @article instance variable'
     end
   end
