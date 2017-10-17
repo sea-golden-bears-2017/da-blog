@@ -14,12 +14,27 @@ describe ArticlesController, type: :controller do
     end
   end
 
-  describe "#show" do
+  context 'with an article' do
     let!(:article) { Article.create!({title: "ham", body: "hams plural great" }) }
 
-    it 'assigns the @article instance variable' do
-      get :show, params: {id: article.id}
-      expect(assigns[:article]).to eq(article)
+    describe "#show" do
+      it 'assigns the @article instance variable' do
+        get :show, params: {id: article.id}
+        expect(assigns[:article]).to eq(article)
+      end
+    end
+
+    describe '#edit' do
+      before(:each) do
+        get :edit, params: {id: article.id}
+      end
+
+      it 'responds with a 200 status code' do
+        expect(response.status).to eq(200)
+      end
+
+      it 'renders a form'
+      it 'assigns the @article instance variable'
     end
   end
 end
