@@ -37,7 +37,9 @@ describe ArticlesController, type: :controller do
         expect(response).to render_template(:edit)
       end
 
-      it 'assigns the @article instance variable'
+      it 'assigns the @article instance variable' do
+        expect(assigns[:article]).to eq(article)
+      end
     end
   end
 end
