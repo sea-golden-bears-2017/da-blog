@@ -50,8 +50,15 @@ end
 
 group :test do
   gem 'rspec-rails'
-  gem 'simplecov'
+  gem 'simplecov', require: false
   gem 'rails-controller-testing'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'faker'
+  gem 'capybara'
+  gem 'poltergeist'
+
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
