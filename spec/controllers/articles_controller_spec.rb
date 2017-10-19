@@ -41,5 +41,15 @@ describe ArticlesController, type: :controller do
         expect(assigns[:article]).to eq(article)
       end
     end
+
+    describe '#update' do
+    let(:new_article_params) { {title: "my little title", body: "hams plural great" } }
+
+      it "updates the article" do
+        put :update, params: {id: article.id, article: new_article_params}
+        article.reload
+        expect(article.title).to eq('my little title')
+      end
+    end
   end
 end
